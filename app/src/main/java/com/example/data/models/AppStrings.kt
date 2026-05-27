@@ -1,0 +1,106 @@
+package com.example.ui.screens
+
+import com.example.ui.viewmodel.AppLanguage
+
+object AppStrings {
+    fun get(key: String, lang: AppLanguage): String {
+        return when (lang) {
+            AppLanguage.EN -> englishStrings[key] ?: key
+            AppLanguage.HI -> hindiStrings[key] ?: (englishStrings[key] ?: key)
+        }
+    }
+
+    private val englishStrings = mapOf(
+        "market_pulse_live" to "MARKET PULSE LIVE",
+        "bank_pulse_ai" to "BankPulse AI",
+        "bank_nifty_index" to "BANK NIFTY INDEX",
+        "tab_monitor" to "Monitor Stream",
+        "tab_alerts" to "Smart Alerts",
+        "tab_consultant" to "AI Consultant",
+        "scenario_injector" to "MARKET SCENARIO INJECTOR",
+        "ai_control_hub" to "AI CONTROL HUB",
+        "scenario_desc" to "Trigger real-time extreme banking market events to evaluate Automated Guideline and Volatility Alert thresholds:",
+        "stocks" to "Banking Stocks",
+        "fds" to "Fixed Deposits",
+        "ipos" to "Listing IPOs",
+        "no_alerts" to "NO VOLATILITY ALERTS DETECTED",
+        "no_alerts_desc" to "Automated banking monitor is passive. Change simulated stock, FD, or IPO margins in Tab 1 to trigger real-time warning spikes.",
+        "warnings_title" to "BANKPULSE TARGET WARNINGS",
+        "ai_intelligence_title" to "BANKPULSE AI INTELLIGENCE",
+        "gemini_context_title" to "GEMINI ADVISORY CONTEXT [BETA]",
+        "chat_placeholder" to "Ask the Gemini banking advisor...",
+        "clear_chat" to "Clear Chat history",
+        "volatile" to "VOLATILE",
+        "high" to "H: ₹",
+        "low" to "L: ₹",
+        "fd_optimizer_title" to "SMART FD YIELD OPTIMIZER",
+        "fd_optimizer_desc" to "Select your main investment goal to auto-evaluate maximum rates across tenures dynamically:",
+        "goal_retirement" to "Retirement Fund (Max Interest)",
+        "goal_tax" to "Tax Saving (Short Stable)",
+        "goal_wealth" to "Wealth Creation (Multi-Year)",
+        "slabs_title" to "BANKING FD INTEREST SLABS",
+        "sr_citizen" to "Sr: ",
+        "listing_timeline" to "Listing Timeline: ",
+        "gmp_premium" to "GMP (Est. Premium)",
+        "price_band" to "PRICING BAND",
+        "subscription" to "SUBSCRIPTION",
+        "ask_reallocs" to "Ask Gemini to generate portfolio reallocs advice:",
+        "ai_insights_btn" to "AI Insights",
+        "thinking" to "Thinking...",
+        "advisor_computing" to "AI Advisor computing bulletins...",
+        "query_guide_title" to "SECURE TERMINAL ASSISTANCE",
+        "query_guide_desc" to "Query active Fixed Deposit interest rate curves, evaluate Gray Market listings, or seek portfolio advice direct from the Gemini-3.5 engine.",
+        "investor_query" to "Investor Query",
+        "ai_advisor_title" to "BankPulse AI Advisor",
+        "suggest_fd" to "Suggest FD Allocation",
+        "suggest_ipo" to "Check IPO GMP premiums",
+        "suggest_analysis" to "Is Bank Nifty index rising?"
+    )
+
+    private val hindiStrings = mapOf(
+        "market_pulse_live" to "मार्केट पल्स लाइव",
+        "bank_pulse_ai" to "बैंकपल्स एआई",
+        "bank_nifty_index" to "बैंक निफ्टी सूचकांक",
+        "tab_monitor" to "निगरानी स्ट्रीम",
+        "tab_alerts" to "स्मार्ट अलर्ट",
+        "tab_consultant" to "एआई सलाहकार",
+        "scenario_injector" to "बाज़ार परिदृश्य इंजेक्टर",
+        "ai_control_hub" to "एआई नियंत्रण हब",
+        "scenario_desc" to "स्वचालित दिशानिर्देश और अस्थिरता अलर्ट सीमाओं का मूल्यांकन करने के लिए वास्तविक समय में चरम बैंकिंग बाजार घटनाओं को ट्रिगर करें:",
+        "stocks" to "बैंकिंग शेयर्स",
+        "fds" to "फिक्ष डिपॉजिट (FD)",
+        "ipos" to "आईपीओ सूची (IPO)",
+        "no_alerts" to "कोई अस्थिरता अलर्ट नहीं मिला",
+        "no_alerts_desc" to "स्वचालित बैंकिंग मॉनिटर निष्क्रिय है। वास्तविक समय की चेतावनी स्पाइक्स को ट्रिगर करने के लिए टैब 1 में सिम्युलेटेड स्टॉक, एफडी, या आईपीओ मार्जिन बदलें।",
+        "warnings_title" to "बैंकपल्स लक्षित चेतावनियाँ",
+        "ai_intelligence_title" to "बैंकपल्स एआई बुद्धिमत्ता",
+        "gemini_context_title" to "जेमिनी सलाहकार संदर्भ [बीटा]",
+        "chat_placeholder" to "जेमिनी बैंकिंग सलाहकार से पूछें...",
+        "clear_chat" to "चैट इतिहास साफ़ करें",
+        "volatile" to "अस्थिर",
+        "high" to "उच्च: ₹",
+        "low" to "निम्न: ₹",
+        "fd_optimizer_title" to "स्मार्ट एफडी यील्ड ऑप्टिमाइज़र",
+        "fd_optimizer_desc" to "सभी अवधियों में अधिकतम दरों का गतिशील रूप से मूल्यांकन करने के लिए अपना मुख्य निवेश लक्ष्य चुनें:",
+        "goal_retirement" to "सेवानिवृत्ति निधि (अधिकतम ब्याज)",
+        "goal_tax" to "कर बचत (स्थिर अल्पावधि)",
+        "goal_wealth" to "संपत्ति सृजन (बहु-वर्षीय)",
+        "slabs_title" to "बैंकिंग एफडी ब्याज स्लैब",
+        "sr_citizen" to "वरिष्ठ: ",
+        "listing_timeline" to "लिस्टिंग समयरेखा: ",
+        "gmp_premium" to "जीएमपी (अनुमानित प्रीमियम)",
+        "price_band" to "प्राइस बैंड",
+        "subscription" to "सब्सक्रिप्शन",
+        "ask_reallocs" to "पोर्टफोलियो पुनरावंटन सलाह उत्पन्न करने के लिए जेमिनी से पूछें:",
+        "ai_insights_btn" to "एआई अंतर्दृष्टि",
+        "thinking" to "सोच रहा हूँ...",
+        "advisor_computing" to "एआई सलाहकार बुलेटिन की गणना कर रहा है...",
+        "query_guide_title" to "सुरक्षित टर्मिनल सहायता",
+        "query_guide_desc" to "सक्रिय सावधि जमा ब्याज दरों की जांच करें, ग्रे मार्केट लिस्टिंग का मूल्यांकन करें, या सीधे जेमिनी-3.5 एआई इंजन से पोर्टफोलियो सलाह लें।",
+        "investor_query" to "निवेशक प्रश्न",
+        "ai_advisor_title" to "बैंकपल्स एआई सलाहकार",
+        "suggest_fd" to "एफडी आवंटन का सुझाव दें",
+        "suggest_ipo" to "आईपीओ जीएमपी प्रीमियम चेक करें",
+        "suggest_analysis" to "क्या बैंक निफ्टी इंडेक्स बढ़ रहा है?"
+    )
+}

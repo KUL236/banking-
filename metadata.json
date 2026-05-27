@@ -1,0 +1,6 @@
+{
+  "name": "BankPulse AI",
+  "description": "Real-time AI banking monitor tracking IPOs, FDs, and Stocks with market volatility triggers and direct Gemini intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
